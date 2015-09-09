@@ -19,7 +19,7 @@
 
       <div class="starter-template">
         <h1>Sistema de Folha de Pagamento</h1>
-        <p class="lead">Olá alunos do curso de ADS, sejam bem vindos ao sistema de folha de pagamento Online. <br> Vocês são os primeiros alunos do curso a ver Java Web no segundo semestre!</p>
+        <p class="lead">Olá alunos do curso de ADS, sejam bem vindos ao sistema de folha de pagamento Online. <br> Alguns de vocês são os primeiros alunos do curso a ver Java Web no segundo semestre!</p>
       </div>
 	
 	  <img class="img-responsive center-block" src="${pageContext.request.contextPath}/images/meme.png"/> 
