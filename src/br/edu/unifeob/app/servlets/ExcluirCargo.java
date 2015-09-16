@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.edu.unifeob.app.daos.CargoDAO;
+import br.edu.unifeob.app.models.Cargo;
+
 /**
- * Servlet implementation class CadastroDeCargos
+ * Servlet implementation class ExcluirCargo
  */
-@WebServlet("/CadastrarCargo")
-public class CadastroDeCargos extends HttpServlet {
+@WebServlet("/ExcluirCargo")
+public class ExcluirCargo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CadastroDeCargos() {
+    public ExcluirCargo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,9 +30,13 @@ public class CadastroDeCargos extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long id = Long.parseLong(request.getParameter("id"));
-		String descricao = request.getParameter("descricao");		
-		response.sendRedirect(request.getContextPath() + "/listaDeCargos.jsp");
-	
+		Cargo cargo = new Cargo();
+		cargo.setId(id);
+		
+		CargoDAO dao = new CargoDAO();
+		dao.deletar(cargo);
+		
+		response.sendRedirect(request.getContextPath() + "/paginas/cargos/listaDeCargos.jsp");
 	}
 
 	/**

@@ -14,7 +14,7 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#about">Funcionários</a></li>
-				<li><a href="${pageContext.request.contextPath}/listaDeCargos.jsp">Cargos</a></li>
+				<li><a href="${pageContext.request.contextPath}/paginas/cargos/listaDeCargos.jsp">Cargos</a></li>
 				<li><a href="#contact">Folha</a></li>
 			</ul>
 		</div>

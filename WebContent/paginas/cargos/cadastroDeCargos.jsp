@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<jsp:include page="menu.jsp"></jsp:include>
+	<jsp:include page="../../menu.jsp"></jsp:include>
 
 	<div class="container">
 
@@ -31,7 +31,13 @@
 				<label for="id">ID</label> <input type="text" class="form-control" name="id" id="id" placeholder="Código do Cargo">
 			</div>
 			<div class="form-group">
-				<label for="descricao">Descrição</label> <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do ticket">
+				<label for="descricao">Descrição</label> <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do cargo">
+			</div>
+			<div class="form-group">
+				<label for="descricao">Salário base</label> <input type="text" class="form-control" name="salarioBase" id="salarioBase" placeholder="Salário base do cargo">
+			</div>
+			<div class="form-group">
+				<label for="descricao">Nível de insalubridade</label> <input type="text" class="form-control" name="nivelDeInsalubridade" id="nivelDeInsalubridade" placeholder="Nível de insalubridade do cargo">
 			</div>
 			<div class="form-group" style="padding: 15px">
 				<button type="submit" class="btn btn-primary btn-lg active" id="saveButton">Salvar</button>				
