@@ -10,24 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import br.edu.unifeob.app.daos.CargoDAO;
 import br.edu.unifeob.app.models.Cargo;
 
-/**
- * Servlet implementation class ExcluirCargo
- */
+
 @WebServlet("/ExcluirCargo")
 public class ExcluirCargo extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	private static final long serialVersionUID = 1L;       
+   
     public ExcluirCargo() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long id = Long.parseLong(request.getParameter("id"));
 		Cargo cargo = new Cargo();
@@ -38,20 +29,12 @@ public class ExcluirCargo extends HttpServlet {
 		
 		response.sendRedirect(request.getContextPath() + "/paginas/cargos/listaDeCargos.jsp");
 	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
