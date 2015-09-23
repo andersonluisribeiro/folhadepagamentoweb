@@ -23,6 +23,7 @@ public class CargoDAO {
 	
 	public Cargo encontrarPorId(Long id){
 		Cargo cargoEncontrado = null;
+		
 		for(Cargo cargoDaLista : cargos){
 			if(cargoDaLista.getId().equals(id)){
 				cargoEncontrado = cargoDaLista;

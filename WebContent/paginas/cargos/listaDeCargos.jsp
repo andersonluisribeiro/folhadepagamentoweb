@@ -45,14 +45,9 @@
 					<td>${cargo.salarioBase}</td>
 					<td>${cargo.nivelDeInsalubridade}</td>
 					<td class="button-column">
-						<form action="${pageContext.request.contextPath}/EditarCargo">
-							<button type="submit" class="btn btn-default btn-lg">
-								<span class="glyphicon glyphicon-edit"></span>
-							</button>
-							<input type="hidden" name="id" value="${cargo.id}" />
-						</form>
+						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarCargo?id=${cargo.id}"><span class="glyphicon glyphicon-edit"></span></a>
 					</td>
-					<td class="button-column">
+					<td class="button-column">						
 						<form action="${pageContext.request.contextPath}/ExcluirCargo">
 							<button type="submit" class="btn btn-default btn-lg">
 								<span class="glyphicon glyphicon-remove-circle"></span>
