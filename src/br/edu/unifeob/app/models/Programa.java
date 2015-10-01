@@ -23,7 +23,7 @@ public class Programa {
 		tabelaDeIRRF.setAnoDeVigencia(2015);
 		tabelaDeIRRF.setValorPorDependente(189.59);
 		
-		SalarioMinimo salarioMinimo = new SalarioMinimo(2015, 788.0);
+		SalarioMinimo salarioMinimo = new SalarioMinimo(1l, 2015, 788.0);
 		
 		FolhaDePagamento folha = new FolhaDePagamento();
 		folha.setMes(8);

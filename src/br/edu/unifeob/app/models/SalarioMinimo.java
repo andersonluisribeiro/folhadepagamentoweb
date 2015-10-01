@@ -2,10 +2,12 @@ package br.edu.unifeob.app.models;
 
 public class SalarioMinimo {
 
+	private Long id;
 	private Integer anoDeVigencia;
 	private Double valor;
 	
-	public SalarioMinimo(Integer anoDeVigencia, Double valor) {
+	public SalarioMinimo(Long id, Integer anoDeVigencia, Double valor) {		
+		this.id = id;
 		this.anoDeVigencia = anoDeVigencia;
 		this.valor = valor;
 	}
@@ -16,6 +18,11 @@ public class SalarioMinimo {
 
 	public Double getValor() {
 		return valor;
-	}	
+	}
+
+	public Long getId() {
+		return id;
+	}
+	
 	
 }

@@ -18,31 +18,28 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h2>Cadastro de Cargos</h2>
-				<p>Cadastro de todos os cargos do sistema. Todos os cargos são utilizados no cadastro dos funcionários.</p>
+				<h2>Cadastro de Salários Mínimos</h2>
+				<p>Cadastro de todos os salários do sistema. Todos os salários que são utilizados na folha de pagamento.</p>
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Veja a documentação &raquo;</a>
 				</p>
 			</div>
 		</div>
-		
 
-		<form role="form" action="${pageContext.request.contextPath}/AlterarCargo" method="post">
+		<form role="form" action="${pageContext.request.contextPath}/CadastrarSalarioMinimo" method="post">
 			<div class="form-group">
-				<label for="id">ID</label> <input type="text" class="form-control" value="${cargo.id}" name="id" id="id" placeholder="Código do Cargo"/>
+				<label for="id">ID</label> <input type="text" class="form-control" name="id" id="id" placeholder="Código do Salário Mínimo">
 			</div>
 			<div class="form-group">
-				<label for="descricao">Descrição</label> <input type="text" class="form-control" value="${cargo.descricao}" name="descricao" id="descricao" placeholder="Descrição do cargo">
-			</div>
+				<label for="anoDeVigencia">Ano de Vigência</label> <input type="text" class="form-control" name="anoDeVigencia" id="anoDeVigencia" placeholder="Ano de Vigência">
+			</div>			
 			<div class="form-group">
-				<label for="descricao">Salário base</label> <input type="text" class="form-control" value="${cargo.salarioBase}" name="salarioBase" id="salarioBase" placeholder="Salário base do cargo">
-			</div>
-			<div class="form-group">
-				<label for="descricao">Nível de insalubridade</label> <input type="text" class="form-control" value="${cargo.nivelDeInsalubridade}" name="nivelDeInsalubridade" id="nivelDeInsalubridade" placeholder="Nível de insalubridade do cargo">
-			</div>
+				<label for="valor">Valor</label> <input type="text" class="form-control" name="valor" id="valor" placeholder="Valor do salário mínimo">
+			</div>			
 			<div class="form-group" style="padding: 15px">
 				<button type="submit" class="btn btn-primary btn-lg active" id="saveButton">Salvar</button>				
 			</div>
+			
 		</form>
 
 	</div>

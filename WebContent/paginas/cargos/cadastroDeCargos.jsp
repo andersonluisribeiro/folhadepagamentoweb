@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-group">
 				<label for="descricao">Descrição</label> <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do cargo">
-			</div>
+			</div>			
 			<div class="form-group">
 				<label for="descricao">Salário base</label> <input type="text" class="form-control" name="salarioBase" id="salarioBase" placeholder="Salário base do cargo">
 			</div>
@@ -42,6 +42,7 @@
 			<div class="form-group" style="padding: 15px">
 				<button type="submit" class="btn btn-primary btn-lg active" id="saveButton">Salvar</button>				
 			</div>
+			
 		</form>
 
 	</div>
