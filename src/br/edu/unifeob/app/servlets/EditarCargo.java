@@ -16,32 +16,16 @@ import br.edu.unifeob.app.models.Cargo;
 public class EditarCargo extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-       
-  
-    public EditarCargo() {
-        super();        
-    }
-
+   
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		Long id = Long.parseLong(request.getParameter("id"));
-		
 		CargoDAO dao = new CargoDAO();
 		Cargo cargo = dao.encontrarPorId(id);
 		
 		request.setAttribute("cargo", cargo);
 		request.getRequestDispatcher("/paginas/cargos/edicaoDeCargo.jsp").forward(request, response);
 		
-	}
-
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		doGet(request, response);
 	}
 
 }

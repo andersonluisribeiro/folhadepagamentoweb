@@ -43,10 +43,10 @@
 					<td>${salario.anoDeVigencia}</td>
 					<td>${salario.valor}</td>
 					<td class="button-column">
-						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarSalario?id=${salario.id}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarSalarioMinimo?id=${salario.id}"><span class="glyphicon glyphicon-edit"></span></a>
 					</td>
 					<td class="button-column">						
-						<form action="${pageContext.request.contextPath}/ExcluirSalario">
+						<form action="${pageContext.request.contextPath}/ExcluirSalarioMinimo">
 							<button type="submit" class="btn btn-default btn-lg">
 								<span class="glyphicon glyphicon-remove-circle"></span>
 							</button>

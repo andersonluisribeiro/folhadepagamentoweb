@@ -16,5 +16,20 @@ public class SalarioMinimoDAO {
 	public void salvar(SalarioMinimo salarioMinimo){
 		salarios.add(salarioMinimo);
 	}
+	
+	public void deletar(SalarioMinimo salarioMinimo){
+		salarios.remove(salarioMinimo);
+	}
+	
+	public SalarioMinimo encontrarPorId(Long id){
+		SalarioMinimo salarioEncontrado = null;
+		
+		for(SalarioMinimo salario : salarios){
+			if(salario.getId().equals(id)){
+				salarioEncontrado = salario;
+			}
+		}
+		return salarioEncontrado;
+	}
 
 }

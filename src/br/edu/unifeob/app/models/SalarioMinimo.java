@@ -12,6 +12,14 @@ public class SalarioMinimo {
 		this.valor = valor;
 	}
 
+	public void setAnoDeVigencia(Integer anoDeVigencia) {
+		this.anoDeVigencia = anoDeVigencia;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
 	public Integer getAnoDeVigencia() {
 		return anoDeVigencia;
 	}
