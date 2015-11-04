@@ -17,6 +17,7 @@
 				<li><a href="${pageContext.request.contextPath}/paginas/empregados/listaDeEmpregados.jsp">Empregados</a></li>
 				<li><a href="${pageContext.request.contextPath}/paginas/cargos/listaDeCargos.jsp">Cargos</a></li>
 				<li><a href="${pageContext.request.contextPath}/paginas/salarioMinimo/listaDeSalarios.jsp">Salário Mínimo</a></li>
+				<li><a href="${pageContext.request.contextPath}/paginas/tabelasDeInss/listaDeTabelas.jsp">Tabela de INSS</a></li>
 				<li><a href="#contact">Folha</a></li>
 			</ul>
 		</div>

@@ -4,8 +4,26 @@ import java.util.List;
 
 public class TabelaDeInss {
 
+	private Long id;
 	private Integer anoDeVigencia;
 	
+	public TabelaDeInss(){
+		
+	}
+	
+	public TabelaDeInss(Long id, Integer anoDeVigencia) {		
+		this.id = id;
+		this.anoDeVigencia = anoDeVigencia;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Integer getAnoDeVigencia() {
 		return anoDeVigencia;
 	}
