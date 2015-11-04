@@ -1,19 +1,27 @@
 package br.edu.unifeob.app.models;
 
-public class Aliquota {
+public class AliquotaDeINSS {
 
+	private Long id;
 	private Double salarioInicial;
 	private Double salarioFinal;
 	private Double valor;
 	private Double valorFixo;
 	
-	public Aliquota(Double salarioInicial, Double salarioFinal, Double valor, Double valorFixo) {
+	public AliquotaDeINSS(Long id, Double salarioInicial, Double salarioFinal, Double valor, Double valorFixo) {
+		this.id = id;
 		this.salarioInicial = salarioInicial;
 		this.salarioFinal = salarioFinal;
 		this.valor = valor;
 		this.valorFixo = valorFixo;
-	}
+	}		
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Double getSalarioInicial() {
 		return salarioInicial;
 	}

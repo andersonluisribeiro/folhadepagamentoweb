@@ -77,7 +77,7 @@ public class FolhaDePagamento {
 	public Double inss() {
 		Double salarioBruto = salarioBruto();
 
-		for (Aliquota aliquota : tabelaDeInss.getAliquotas()) {
+		for (AliquotaDeINSS aliquota : tabelaDeInss.getAliquotas()) {
 
 			if (aliquota.getValorFixo() != null && salarioBruto > aliquota.getSalarioInicial()) {
 				return aliquota.getValorFixo();

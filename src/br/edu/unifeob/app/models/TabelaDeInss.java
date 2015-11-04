@@ -6,6 +6,7 @@ public class TabelaDeInss {
 
 	private Long id;
 	private Integer anoDeVigencia;
+	private List<AliquotaDeINSS> aliquotas = new ArrayList<>();
 	
 	public TabelaDeInss(){
 		
@@ -32,19 +33,13 @@ public class TabelaDeInss {
 		this.anoDeVigencia = anoDeVigencia;
 	}
 
-	public List<Aliquota> getAliquotas() {
-		Aliquota primeira = new Aliquota(0.0, 1399.12, 0.08, null);
-		Aliquota segunda = new Aliquota(1399.13, 2331.88, 0.09, null);
-		Aliquota terceira = new Aliquota(2331.89, 4663.75, 0.11, null);
-		Aliquota quarta = new Aliquota(4663.76, null, null, 513.02);
+	public List<AliquotaDeINSS> getAliquotas() {
+		return aliquotas;
+	}
+
+	public void setAliquotas(List<AliquotaDeINSS> aliquotas) {
+		this.aliquotas = aliquotas;
+	}
 		
-		List<Aliquota> aliquotasFail = new ArrayList<>();
-		aliquotasFail.add(primeira);
-		aliquotasFail.add(segunda);
-		aliquotasFail.add(terceira);
-		aliquotasFail.add(quarta);
-		
-		return aliquotasFail;
-	}	
 	
 }

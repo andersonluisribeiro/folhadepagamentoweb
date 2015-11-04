@@ -18,6 +18,8 @@
 				<li><a href="${pageContext.request.contextPath}/paginas/cargos/listaDeCargos.jsp">Cargos</a></li>
 				<li><a href="${pageContext.request.contextPath}/paginas/salarioMinimo/listaDeSalarios.jsp">Salário Mínimo</a></li>
 				<li><a href="${pageContext.request.contextPath}/paginas/tabelasDeInss/listaDeTabelas.jsp">Tabela de INSS</a></li>
+				<li><a href="${pageContext.request.contextPath}/paginas/aliquotasDeInss/listaDeAliquotas.jsp">Alíquota de INSS</a></li>
+				<li><a href="${pageContext.request.contextPath}/paginas/tabelasDeIrrf/listaDeTabelas.jsp">Tabela de IRRF</a></li>
 				<li><a href="#contact">Folha</a></li>
 			</ul>
 		</div>

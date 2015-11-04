@@ -4,10 +4,27 @@ import java.util.List;
 
 public class TabelaDeIRRF {
 
+	private Long id;
 	private Integer anoDeVigencia;
 	private Double valorPorDependente;
 	private List<AliquotaDeIRRF> aliquotas;
 	
+	public TabelaDeIRRF(){
+		
+	}
+	
+	public TabelaDeIRRF(Long id, Integer anoDeVigencia, Double valorPorDependente) {		
+		this.id = id;
+		this.anoDeVigencia = anoDeVigencia;
+		this.valorPorDependente = valorPorDependente;
+	}
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Integer getAnoDeVigencia() {
 		return anoDeVigencia;
 	}
