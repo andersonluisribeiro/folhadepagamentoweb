@@ -18,8 +18,8 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h2>Cadastro de Salários</h2>
-				<p>Cadastro de todos os salários do sistema. Todos os salários são utilizados na folha de pagamento.</p>
+				<h2>Cadastro de Empregados</h2>
+				<p>Cadastro de todos os empregados do sistema. Todos os empregados são utilizados no lançamento da folha.</p>
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Veja a documentação &raquo;</a>
 				</p>
@@ -29,35 +29,37 @@
 		<table class="table">
 			<tr>
 				<th style="width: 10%">Id</th>
-				<th style="width: 20%">Ano de vigência</th>
-				<th style="width: 50%">Valor</th>
+				<th style="width: 10%">Matrícula</th>
+				<th style="width: 40%">Nome</th>
+				<th style="width: 20%">Cargo</th>
 				<th style="width: 10%" class="button-column">Editar</th>
 				<th style="width: 10%" class="button-column">Excluir</th>
 			</tr>
 
-			<jsp:useBean id="dao" class="br.edu.unifeob.app.daos.SalarioMinimoDAO" />
+			<jsp:useBean id="dao" class="br.edu.unifeob.app.daos.EmpregadoDAO" />
 
-			<c:forEach var="salario" items="${dao.lista}">
+			<c:forEach var="empregado" items="${dao.lista}">
 				<tr>
-					<td>${salario.id}</td>
-					<td>${salario.anoDeVigencia}</td>
-					<td>${salario.valor}</td>
+					<td>${empregado.id}</td>
+					<td>${empregado.matricula}</td>
+					<td>${empregado.nome}</td>
+					<td>${empregado.cargo.descricao}</td>
 					<td class="button-column">
-						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarSalarioMinimo?id=${salario.id}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarEmpregado?id=${empregado.id}"><span class="glyphicon glyphicon-edit"></span></a>
 					</td>
 					<td class="button-column">						
-						<form action="${pageContext.request.contextPath}/ExcluirSalarioMinimo">
+						<form action="${pageContext.request.contextPath}/ExcluirEmpregado">
 							<button type="submit" class="btn btn-default btn-lg">
 								<span class="glyphicon glyphicon-remove-circle"></span>
 							</button>
-							<input type="hidden" name="id" value="${salario.id}" />
+							<input type="hidden" name="id" value="${empregado.id}" />
 						</form>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
 
-		<a href="${pageContext.request.contextPath}/paginas/salarioMinimo/cadastroDeSalarios.jsp" class="btn btn-primary btn-lg active">Novo</a>
+		<a href="${pageContext.request.contextPath}/paginas/empregados/cadastroDeEmpregados.jsp" class="btn btn-primary btn-lg active">Novo</a>
 
 	</div>
 
