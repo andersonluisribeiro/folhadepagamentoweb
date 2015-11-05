@@ -2,6 +2,7 @@ package br.edu.unifeob.app.models;
 
 public class FolhaDePagamento {
 
+	private Long id;
 	private Integer mes;
 	private Integer ano;
 	private Empregado empregado;
@@ -9,6 +10,14 @@ public class FolhaDePagamento {
 	private TabelaDeIRRF tabelaDeIRRF;
 	private Double adiantamento;
 	private SalarioMinimo salarioMinimo;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Integer getMes() {
 		return mes;
@@ -93,49 +102,41 @@ public class FolhaDePagamento {
 	public Double salarioLiquido() {
 		return salarioBruto() - inss() - getAdiantamento();
 	}
-	
-	public Double baseDeCalculoDoIRRF(){
-		return salarioBruto() - 
-				inss() - 
-				deducaoDosDependentesNoIRRF() ;
+
+	public Double baseDeCalculoDoIRRF() {
+		return salarioBruto() - inss() - deducaoDosDependentesNoIRRF();
 	}
-	
-	public Double deducaoDosDependentesNoIRRF(){
-		return getEmpregado().getQuantidadeDeDependentes() * 
-				getTabelaDeIRRF().getValorPorDependente();
+
+	public Double deducaoDosDependentesNoIRRF() {
+		return getEmpregado().getQuantidadeDeDependentes() * getTabelaDeIRRF().getValorPorDependente();
 	}
-	
-	public Double impostoDeRenda(){
+
+	public Double impostoDeRenda() {
 		Double baseDeCalculo = baseDeCalculoDoIRRF();
 		Double valorDoImposto = 0.0;
-		
-		for(AliquotaDeIRRF aliquotaDeIRRF : tabelaDeIRRF.getAliquotas()){
-			
-			if(aliquotaDeIRRF.getSalarioFinal() ==null &&
-					aliquotaDeIRRF.getSalarioInicial() < baseDeCalculo){
-				
-				valorDoImposto = (baseDeCalculo * aliquotaDeIRRF.getValor()) - 
-						aliquotaDeIRRF.getParcelaADeduzir();
-				
+
+		for (AliquotaDeIRRF aliquotaDeIRRF : tabelaDeIRRF.getAliquotas()) {
+
+			if (aliquotaDeIRRF.getSalarioFinal() == null && aliquotaDeIRRF.getSalarioInicial() < baseDeCalculo) {
+
+				valorDoImposto = (baseDeCalculo * aliquotaDeIRRF.getValor()) - aliquotaDeIRRF.getParcelaADeduzir();
+
 			}
-			
-			if(aliquotaDeIRRF.getSalarioFinal() != null &&
-					aliquotaDeIRRF.getSalarioInicial() <  baseDeCalculo &&
-					aliquotaDeIRRF.getSalarioFinal() > baseDeCalculo){
-				
-				valorDoImposto = (baseDeCalculo * aliquotaDeIRRF.getValor()) - 
-						aliquotaDeIRRF.getParcelaADeduzir();
-				
+
+			if (aliquotaDeIRRF.getSalarioFinal() != null && aliquotaDeIRRF.getSalarioInicial() < baseDeCalculo
+					&& aliquotaDeIRRF.getSalarioFinal() > baseDeCalculo) {
+
+				valorDoImposto = (baseDeCalculo * aliquotaDeIRRF.getValor()) - aliquotaDeIRRF.getParcelaADeduzir();
+
 			}
-			
+
 		}
-		
+
 		return valorDoImposto;
 	}
-	
-	public Double insalubridade(){
-		return getSalarioMinimo().getValor() *
-					getEmpregado().getCargo().getNivelDeInsalubridade();
+
+	public Double insalubridade() {
+		return getSalarioMinimo().getValor() * getEmpregado().getCargo().getNivelDeInsalubridade();
 	}
 
 }

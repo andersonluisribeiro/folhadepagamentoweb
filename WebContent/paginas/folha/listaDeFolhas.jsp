@@ -18,8 +18,8 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h2>Cadastro de Tabelas de IRRF</h2>
-				<p>Cadastro de todas as tabelas de IRRF do sistema. Todas as tabelas são utilizadas na folha de pagamento.</p>
+				<h2>Lista de Folhas</h2>
+				<p>Ralação das folhas de pagamento de todos os colaboradores da empresa. </p>
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Veja a documentação &raquo;</a>
 				</p>
@@ -29,35 +29,37 @@
 		<table class="table">
 			<tr>
 				<th style="width: 10%">Id</th>
-				<th style="width: 35%">Ano de vigência</th>	
-				<th style="width: 35%">Valor por dependente</th>				
+				<th style="width: 10%">Mês</th>
+				<th style="width: 10%">Ano</th>
+				<th style="width: 50%">Empregado</th>
 				<th style="width: 10%" class="button-column">Editar</th>
 				<th style="width: 10%" class="button-column">Excluir</th>
 			</tr>
 
-			<jsp:useBean id="dao" class="br.edu.unifeob.app.daos.TabelaDeIrrfDAO" />
+			<jsp:useBean id="dao" class="br.edu.unifeob.app.daos.FolhaDePagamentoDAO" />
 
-			<c:forEach var="tabela" items="${dao.lista}">
+			<c:forEach var="folha" items="${dao.lista}">
 				<tr>
-					<td>${tabela.id}</td>
-					<td>${tabela.anoDeVigencia}</td>
-					<td>${tabela.valorPorDependente}</td>					
+					<td>${folha.id}</td>					
+					<td>${folha.mes}</td>
+					<td>${folha.ano}</td>
+					<td>${folha.empregado.nome}</td>
 					<td class="button-column">
-						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarTabelaDeIrrf?id=${tabela.id}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a class="btn btn-default btn-lg" href="${pageContext.request.contextPath}/EditarFolha?id=${folha.id}"><span class="glyphicon glyphicon-edit"></span></a>
 					</td>
 					<td class="button-column">						
-						<form action="${pageContext.request.contextPath}/ExcluirTabelaDeIrrf">
+						<form action="${pageContext.request.contextPath}/ExcluirFolha">
 							<button type="submit" class="btn btn-default btn-lg">
 								<span class="glyphicon glyphicon-remove-circle"></span>
 							</button>
-							<input type="hidden" name="id" value="${tabela.id}" />
+							<input type="hidden" name="id" value="${folha.id}" />
 						</form>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
 
-		<a href="${pageContext.request.contextPath}/paginas/tabelasDeIrrf/cadastroDeTabela.jsp" class="btn btn-primary btn-lg active">Nova</a>
+		<a href="${pageContext.request.contextPath}/paginas/folha/lancamento.jsp" class="btn btn-primary btn-lg active">Novo</a>
 
 	</div>
 

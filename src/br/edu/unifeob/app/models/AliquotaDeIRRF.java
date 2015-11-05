@@ -2,18 +2,26 @@ package br.edu.unifeob.app.models;
 
 public class AliquotaDeIRRF {
 
+	private Long id;
 	private Double salarioInicial;
 	private Double salarioFinal;
 	private Double valor;
 	private Double parcelaADeduzir;
 	
 	public AliquotaDeIRRF(Double salarioInicial, Double salarioFinal, Double valor, Double parcelaADeduzir) {
+		
 		this.salarioInicial = salarioInicial;
 		this.salarioFinal = salarioFinal;
 		this.valor = valor;
 		this.parcelaADeduzir = parcelaADeduzir;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Double getSalarioInicial() {
 		return salarioInicial;
 	}

@@ -18,20 +18,23 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h2>Cadastro de Tabelas de INSS</h2>
-				<p>Cadastro de todas as tabelas de INSS do sistema. Todas as tabelas são utilizadas na folha de pagamento.</p>
+				<h2>Cadastro de Tabelas de IRRF</h2>
+				<p>Cadastro de todas as tabelas de IRRF do sistema. Todas as tabelas são utilizadas na folha de pagamento.</p>
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Veja a documentação &raquo;</a>
 				</p>
 			</div>
 		</div>
 
-		<form role="form" action="${pageContext.request.contextPath}/CadastrarTabelaDeInss" method="post">
+		<form role="form" action="${pageContext.request.contextPath}/CadastrarTabelaDeIrrf" method="post">
 			<div class="form-group">
-				<label for="id">ID</label> <input type="text" class="form-control" name="id" id="id" placeholder="Código do Salário Mínimo">
+				<label for="id">ID</label> <input type="text" class="form-control" name="id" id="id" placeholder="Código da tabela">
 			</div>
 			<div class="form-group">
-				<label for="anoDeVigencia">Ano de Vigência</label> <input type="text" class="form-control" name="anoDeVigencia" id="anoDeVigencia" placeholder="Ano de Vigência">
+				<label for="anoDeVigencia">Ano de vigência</label> <input type="text" class="form-control" name="anoDeVigencia" id="anoDeVigencia" placeholder="Ano de vigência da tabela">
+			</div>
+			<div class="form-group">
+				<label for="valorPorDependente">Valor por dependente</label> <input type="text" class="form-control" name="valorPorDependente" id="valorPorDependente" placeholder="Valor por dependente da tabela">
 			</div>
 			<div class="form-group" style="padding: 15px">
 				<button type="submit" class="btn btn-primary btn-lg active" id="saveButton">Salvar</button>				
