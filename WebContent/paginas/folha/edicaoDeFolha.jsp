@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,7 +28,9 @@
 		</div>
 
 		<form role="form" action="${pageContext.request.contextPath}/CadastrarFolha" method="post">
-
+			
+			<fmt:setLocale value="pt_BR"/>
+			
 			<div class="row">
 				<div class="col-md-4">
 					<label for="id">ID</label> <input type="text" class="form-control" name="id" id="id" placeholder="Código da folha" value="${folha.id}">
@@ -83,8 +86,8 @@
 				<div class="col-md-4">
 					<label for="adiantamento">Adiatamento</label> <input type="text" class="form-control" name="adiantamento" id="adiantamento" placeholder="Adiantamento do empregado" value="${folha.adiantamento}">
 				</div>
-				<div class="col-md-4">
-					<label for="impostoDeRenda">R$ IRRF</label> <input type="text" class="form-control" name="irrf" id="irrf" placeholder="IRRF do empregado" value="${irrf}">
+				<div class="col-md-4">					
+					<label for="impostoDeRenda">R$ IRRF</label> <input type="text" disabled="disabled" class="form-control" name="irrf" id="irrf" placeholder="IRRF do empregado" value="<fmt:formatNumber value="${irrf}" type="number" maxFractionDigits="2"/>">
 				</div>
 			</div>
 
