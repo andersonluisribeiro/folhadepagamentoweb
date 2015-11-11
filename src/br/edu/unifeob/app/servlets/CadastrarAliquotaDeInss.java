@@ -26,7 +26,7 @@ public class CadastrarAliquotaDeInss extends HttpServlet {
 		Double salarioInicial = Double.parseDouble(request.getParameter("salarioInicial"));
 		Double salarioFinal = Double.parseDouble(request.getParameter("salarioFinal"));
 		Double valor = Double.parseDouble(request.getParameter("valor"));
-		Double valorFixo = Double.parseDouble(request.getParameter("valorFixo"));
+		Double valorFixo = request.getParameter("valorFixo") == null || request.getParameter("valorFixo").isEmpty() ?  null : Double.parseDouble(request.getParameter("valorFixo"));
 		
 		AliquotaDeINSS aliquota = new AliquotaDeINSS(id, salarioInicial, salarioFinal, valor, valorFixo);
 		TabelaDeInss tabela = new TabelaDeInssDAO().encontrarPorId(tabelaId);
